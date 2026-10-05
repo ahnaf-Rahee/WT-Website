@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8"><!--meta data -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--/meta data-->
+
+    <title>WT Bot Interface</title><!--/title-->
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!--/font-->
+
+    <link rel="stylesheet" href="WT_main.css"><!--/css link-->
+
+</head>
+
+<body>
+
+    <div class="layout-container"><!--entire layout -->
+
+        
+        <aside class="nav-sidebar"><!-- (semantic)Sidebar Navigation -->
+            <div class="nav-section-title">Nav Bar</div>
+            <a href="#" class="nav-item">Player Stats lookup</a>
+            <a href="#" class="nav-item">A separate Leaderboard</a>
+            <a href="#" class="nav-item">A map list</a>
+            <a href="#" class="nav-item">SQB Latest Match comps</a>
+            <a href="#" class="nav-item">Strat list</a>
+            <a href="#" class="nav-item">Meta vehicles list</a>
+            <a href="#" class="nav-item">A database of how to do things in game</a>
+        </aside><!--/Sidebar Navigation-->
+
+        <main class="content-area"> <!--(semantic)main content -->
+            
+            
+            <div class="lookup-row"><!--first lookup row-->
+                
+                <div class="wt-box wt-interactive-box player-card">
+                    <h3>Player Lookup</h3>
+                    <p>Search for player statistics and battle ratings.</p>
+
+                    
+                    <div class="search-container"><!-- Search Input Container -->
+                        <input type="text" id="player-search" placeholder="Enter player name..." autocomplete="off">
+                    </div>
+
+                    
+                    <div id="player-output" class="result search-container"></div><!-- JS Output Area for Bot Data -->
+                </div><!--/player card-->
+
+                
+                <div class="wt-box wt-interactive-box"><!-- Squadron Lookup Card -->
+                    <h3>Squadron Lookup</h3>
+                    <p>Search for squadron rankings and active rosters.</p>
+                </div><!--/Squadron Lookup Card -->
+            </div>
+
+        </main><!--/(semantic) main content-->
+
+    </div> <!--/entire layouts-->
+
+</body>
+</html>

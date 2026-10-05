@@ -1,0 +1,195 @@
+/* ==========================================================================
+   Global Styles & Fonts 🎨
+   ========================================================================== */
+body {
+    background-color: #1a1e21; /* Dark slate background */
+    color: #e3e8ec;            /* High contrast off-white text */
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    margin-top: 0;
+}
+
+/* ==========================================================================
+   Page Layout (Flexbox) 📐
+   ========================================================================== */
+.layout-container {
+    display: flex;
+    gap: 20px;                 /* Space between sidebar and main content */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-area {
+    flex: 1;                   /* Takes up all remaining width on the right */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;                 /* Vertical spacing between main cards/tables */
+}
+
+.lookup-row {
+    display: flex;
+    gap: 20px;                 /* Space between Player & Squadron boxes */
+    align-items: flex-start;   /* Prevents sibling boxes from stretching on hover */
+}
+
+.lookup-row .wt-box {
+    flex: 1;                   /* Forces both lookup boxes to share equal width */
+}
+
+/* ==========================================================================
+   Sidebar Navigation Styles 🧭
+   ========================================================================== */
+.nav-sidebar {
+    width: 260px;
+    flex-shrink: 0;            /* Keeps sidebar fixed at 260px */
+    background-color: #24292e;
+    border: 1px solid #363d44;
+    border-radius: 4px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.nav-section-title {
+    color: #7a7a7a;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+}
+
+.nav-item {
+    color: #e3e8ec;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-item:hover {
+    background-color: #2a3036;
+    color: #d1a938;            /* War Thunder gold accent on hover */
+}
+
+/* ==========================================================================
+   War Thunder Cards & Tables 🛡️
+   ========================================================================== */
+.wt-box {
+    background-color: #24292e;
+    border: 1px solid #363d44;
+    border-left: 4px solid #c59b27; /* Signature gold accent bar */
+    border-radius: 4px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.wt-interactive-box {
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.wt-interactive-box:hover {
+    background-color: #2a3036;
+    border-color: #d1a938;
+}
+
+/* Base height and smooth height expansion for Player Lookup */
+.player-card {
+    min-height: 120px; /* Base height (x) */
+    transition: min-height 0.4s ease-in-out, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.player-card:hover {
+    min-height: 300px; /* Expanded height (2.5x) */
+}
+
+/* Search input container hover reveal */
+.search-container {
+    opacity: 0;
+    transition: opacity 0.3s ease 0.1s; /* Fades in while expanding */
+}
+
+.player-card:hover .search-container {
+    opacity: 1;
+}
+
+/* Google-Inspired Search Input 🔍 */
+#player-search {
+    width: 100%;
+    padding: 10px 18px;
+    background-color: #ffffff;        /* Clean white background */
+    color: #1a1e21;                   /* Standard dark text color */
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    border: 1px solid #dfe1e5;        /* Soft border */
+    border-radius: 24px;              /* Signature rounded pill shape */
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    box-sizing: border-box;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+#player-search:focus {
+    outline: none;
+    border-color: #d1a938;
+    box-shadow: 0 2px 8px rgba(209, 169, 56, 0.4);
+}
+
+#player-search::placeholder {
+    color: #70757a;                   /* Muted placeholder text */
+}
+
+/* Output Area Styling 📜 */
+.output-area {
+    margin-top: 12px;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+/* Table Styles 📊 */
+.wt-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #24292e;
+    font-size: 14px;
+}
+
+.wt-table th {
+    background-color: #171a1d;
+    color: #c59b27;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    padding: 10px; 
+    border: 1px solid #363d44;
+    text-align: left;
+}
+
+.wt-table td {
+    padding: 10px;
+    border: 1px solid #2f353b;
+}
+
+.wt-table tr:nth-child(even) {
+    background-color: #202428;
+}
+.result-section {
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s; /* 0.2s delay keeps it smooth while expanding */
+    margin-top: 15px; /* Adds space between the search bar and results */
+}
+
+.player-card:hover .result-section {
+    opacity: 1;
+}
